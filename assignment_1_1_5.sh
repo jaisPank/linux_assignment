@@ -41,7 +41,17 @@ history | grep "sudo"
 
 #Write command for stopping a process on a specific port number.
 
-#Command used : 
+#Command used : netstat -nlp | grep :5353 | awk '{print $6}' | cut -d/ -f1
+# Command Used : netstat -nlp | grep :5353 | awk '{print $6}' | awk -F "/" '{print $1}'
+## At last we can use kill command.
+
+##netstat command gives all details of a process with pid, port number,process name, We can use flag -nlp for listening ,disable
+#grep command is used as filter for given port number
+# awk command is used as cut and get value of column six, we can also use cut command
+#cut command is used to cut with specifi delimiter , and then value is take for any use. We can also use awk command also
+
+kill $(netstat -nlp | grep :5353 | awk '{print $6}' | cut -d/ -f1)
+
 
 
 
