@@ -1,3 +1,6 @@
+#!/usr/bin/bash
+
+
 #Question 1
 # Find all files in a directory larger than 10 kb.
 
